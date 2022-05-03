@@ -1,9 +1,9 @@
-package com.java.app.cursework;
+package com.java.PropertyProduct;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class ToyProperty extends SupermarketProperty {
+public final class ToyProperty extends SupermarketProperty {
     public SimpleIntegerProperty ageGroup;
     public SimpleStringProperty type;
 

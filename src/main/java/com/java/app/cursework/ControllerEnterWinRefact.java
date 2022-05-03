@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.java.PropertyProduct.ToyProperty;
 import com.java.app.cursework.dop.CSS;
 import com.java.app.cursework.dop.TextChoiceBox;
 import com.java.dataBase.DataBaseHandler;
