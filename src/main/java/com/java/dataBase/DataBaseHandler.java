@@ -208,9 +208,9 @@ public class DataBaseHandler extends ConfigsDB{
                         ConstDB.PRODUCTS_TABLE_RETAIL_PRICE+","+
                         ConstDB.FRUITS_TABLE_TIME_DAYS+","+
                         ConstDB.FRUITS_TABLE_TEMPERATURE+
-                        "FROM "+ConstDB.PRODUCTS_TABLE+
-                        ConstDB.TOYS_TABLE+
-                        "WHERE "+ ConstDB.PRODUCTS_TABLE+"."+ConstDB.PRODUCTS_TABLE_ID_PRODUCT+
+                        " FROM "+ConstDB.PRODUCTS_TABLE+","+
+                        ConstDB.FRUITS_TABLE+
+                        " WHERE "+ ConstDB.PRODUCTS_TABLE+"."+ConstDB.PRODUCTS_TABLE_ID_PRODUCT+
                         "="+
                         ConstDB.FRUITS_TABLE+"."+ConstDB.FRUITS_TABLE_FK_ID_PRODUCT;
         try {
@@ -233,9 +233,9 @@ public class DataBaseHandler extends ConfigsDB{
                         ConstDB.OVERSIZES_TABLE_HEIGHT+","+
                         ConstDB.OVERSIZES_TABLE_WIDTH+","+
                         ConstDB.OVERSIZES_TABLE_LENGTH+
-                        "FROM "+ConstDB.PRODUCTS_TABLE+
-                        ConstDB.TOYS_TABLE+
-                        "WHERE "+ ConstDB.PRODUCTS_TABLE+"."+ConstDB.PRODUCTS_TABLE_ID_PRODUCT+
+                        " FROM "+ConstDB.PRODUCTS_TABLE+","+
+                        ConstDB.OVERSIZES_TABLE+
+                        " WHERE "+ ConstDB.PRODUCTS_TABLE+"."+ConstDB.PRODUCTS_TABLE_ID_PRODUCT+
                         "="+
                         ConstDB.OVERSIZES_TABLE+"."+ConstDB.OVERSIZES_TABLE_FK_ID_PRODUCT;
         try {

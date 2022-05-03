@@ -5,7 +5,8 @@ public class TextChoiceBox {
             "Беларусь",
             "Казахстан",
             "Россия",
-            "Китай"
+            "Китай",
+            "Узбекистан"
     };
     public static String[] type={
             "Игрушка",

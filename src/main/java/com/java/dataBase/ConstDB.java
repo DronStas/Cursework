@@ -11,7 +11,7 @@ public class ConstDB {
     public static final String FRUITS_TABLE = "fruits";
     public static final String FRUITS_TABLE_ID_FRUIT = "id_fruit";
     public static final String FRUITS_TABLE_TIME_DAYS = "time_days";
-    public static final String FRUITS_TABLE_TEMPERATURE = "time_days";
+    public static final String FRUITS_TABLE_TEMPERATURE = "temperature";
     public static final String FRUITS_TABLE_FK_ID_PRODUCT = "fk_id_product";
 
     public static final String OVERSIZES_TABLE = "oversizes";
