@@ -26,7 +26,6 @@ public class DataBaseHandler extends ConfigsDB{
             throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:postgresql://" + dbHost + ":"
                 + dbPort + "/" + dbName;
-        //jdbc:postgresql://localhost:5432/Prog
         System.out.println("connectionString= " + connectionString);
         try {
             Class.forName("org.postgresql.Driver");

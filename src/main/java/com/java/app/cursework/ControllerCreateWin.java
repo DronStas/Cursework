@@ -79,161 +79,154 @@ public class ControllerCreateWin {
     private Button exitButton;
     @FXML
     private Button createButton;
+
     @FXML
     void createButtonClicked(MouseEvent event) {
-        boolean isNormalInfo=true;
-        String departmentName= departmentNameTextField.getText();
-        if(departmentName.equals("")){
+        boolean isNormalInfo = true;
+        String departmentName = departmentNameTextField.getText();
+        if (departmentName.equals("")) {
             CSS.errorTextField(departmentNameTextField);
-            isNormalInfo=false;
+            isNormalInfo = false;
         }
 
-        String productName= productNameTextField.getText();
-        if(productName.equals("")){
+        String productName = productNameTextField.getText();
+        if (productName.equals("")) {
             CSS.errorTextField(productNameTextField);
-            isNormalInfo=false;
+            isNormalInfo = false;
         }
 
-        String country=countryChoiceBox.getValue();
+        String country = countryChoiceBox.getValue();
 
-        String priceStr=priceTextField.getText();
-        double price=0;
+        String priceStr = priceTextField.getText();
+        double price = 0;
         try {
-            price= Double.parseDouble(priceStr);
-        }
-        catch(Exception e) {
-            isNormalInfo=false;
+            price = Double.parseDouble(priceStr);
+        } catch (Exception e) {
+            isNormalInfo = false;
             CSS.errorTextField(priceTextField);
         }
 
-        String typeChoiceBoxText=typeChoiceBox.getValue();
-        Supermarket product = new Supermarket(departmentName,productName,country,price);
+        String typeChoiceBoxText = typeChoiceBox.getValue();
+        Supermarket product = new Supermarket(departmentName, productName, country, price);
 
-        Toy productToy=null;
-        Fruit productFruit=null;
-        Oversize productOversize=null;
+        Toy productToy = null;
+        Fruit productFruit = null;
+        Oversize productOversize = null;
 
-        int ageGroup=0;
+        int ageGroup = 0;
         String type;
-        if(typeChoiceBoxText.equals("Игрушка")){
-            String ageGroupStr=ageToysTextField.getText();
+        if (typeChoiceBoxText.equals("Игрушка")) {
+            String ageGroupStr = ageToysTextField.getText();
             try {
-                ageGroup= Integer.parseInt(ageGroupStr);
-                if(ageGroup<=0||ageGroup>=150){
-                    isNormalInfo=false;
+                ageGroup = Integer.parseInt(ageGroupStr);
+                if (ageGroup <= 0 || ageGroup >= 150) {
+                    isNormalInfo = false;
                     CSS.errorTextField(ageToysTextField);
                 }
-            }
-            catch(Exception e) {
-                isNormalInfo=false;
+            } catch (Exception e) {
+                isNormalInfo = false;
                 CSS.errorTextField(ageToysTextField);
             }
-            type=typeToysTextField.getText();
-            if(type.equals("")){
+            type = typeToysTextField.getText();
+            if (type.equals("")) {
                 CSS.errorTextField(typeToysTextField);
-                isNormalInfo=false;
+                isNormalInfo = false;
             }
-            if(isNormalInfo){
-                productToy =new Toy(product,ageGroup,type);
+            if (isNormalInfo) {
+                productToy = new Toy(product, ageGroup, type);
             }
 
         }
 
-        int time=0;
-        double temperature=0;
-        if(typeChoiceBoxText.equals("Фрукт")){
-            String timeStr=timeSaveFruits.getText();
+        int time = 0;
+        double temperature = 0;
+        if (typeChoiceBoxText.equals("Фрукт")) {
+            String timeStr = timeSaveFruits.getText();
             try {
-                time= Integer.parseInt(timeStr);
-                if(time<=0){
-                    isNormalInfo=false;
+                time = Integer.parseInt(timeStr);
+                if (time <= 0) {
+                    isNormalInfo = false;
                     CSS.errorTextField(timeSaveFruits);
                 }
-            }
-            catch(Exception e) {
-                isNormalInfo=false;
+            } catch (Exception e) {
+                isNormalInfo = false;
                 CSS.errorTextField(timeSaveFruits);
             }
-            String temperatureStr=temperSaveFruits.getText();
+            String temperatureStr = temperSaveFruits.getText();
             try {
-                temperature= Integer.parseInt(temperatureStr);
+                temperature = Integer.parseInt(temperatureStr);
 
-            }
-            catch(Exception e) {
-                isNormalInfo=false;
+            } catch (Exception e) {
+                isNormalInfo = false;
                 CSS.errorTextField(temperSaveFruits);
             }
-            if(isNormalInfo){
-                productFruit =new Fruit(product,time,temperature);
+            if (isNormalInfo) {
+                productFruit = new Fruit(product, time, temperature);
             }
         }
 
 
-        double height=0;
-        double width=0;
-        double length=0;
-        if(typeChoiceBoxText.equals("Габарритный товар")){
-            String heightStr =heightOversizeTextField.getText();
+        double height = 0;
+        double width = 0;
+        double length = 0;
+        if (typeChoiceBoxText.equals("Габарритный товар")) {
+            String heightStr = heightOversizeTextField.getText();
             try {
-                height=  Double.parseDouble(heightStr);
-                if(height<=0){
-                    isNormalInfo=false;
+                height = Double.parseDouble(heightStr);
+                if (height <= 0) {
+                    isNormalInfo = false;
                     CSS.errorTextField(heightOversizeTextField);
                 }
-            }
-            catch(Exception e) {
-                isNormalInfo=false;
+            } catch (Exception e) {
+                isNormalInfo = false;
                 CSS.errorTextField(heightOversizeTextField);
             }
-            String widthtStr =widthOversizeTextField.getText();
+            String widthtStr = widthOversizeTextField.getText();
             try {
-                width= Double.parseDouble(widthtStr);
-                if(width<=0){
-                    isNormalInfo=false;
+                width = Double.parseDouble(widthtStr);
+                if (width <= 0) {
+                    isNormalInfo = false;
                     CSS.errorTextField(widthOversizeTextField);
                 }
-            }
-            catch(Exception e) {
-                isNormalInfo=false;
+            } catch (Exception e) {
+                isNormalInfo = false;
                 CSS.errorTextField(widthOversizeTextField);
             }
-            String lengthStr =lengthOversizeTextField.getText();
+            String lengthStr = lengthOversizeTextField.getText();
             try {
-                length= Double.parseDouble(lengthStr);
-                if(length<=0){
-                    isNormalInfo=false;
+                length = Double.parseDouble(lengthStr);
+                if (length <= 0) {
+                    isNormalInfo = false;
                     CSS.errorTextField(lengthOversizeTextField);
                 }
-            }
-            catch(Exception e) {
-                isNormalInfo=false;
+            } catch (Exception e) {
+                isNormalInfo = false;
                 CSS.errorTextField(lengthOversizeTextField);
             }
-            if(isNormalInfo){
-                productOversize =new Oversize(product,height,width,length);
+            if (isNormalInfo) {
+                productOversize = new Oversize(product, height, width, length);
             }
 
         }
 
-        if(isNormalInfo){
+        if (isNormalInfo) {
             System.out.println("product created");
             System.out.println(product.toString());
-        }
-        else {
+        } else {
             System.out.println("product not created");
             return;
         }
         DataBaseHandler dbHandler = new DataBaseHandler();
 
-        if(typeChoiceBoxText.equals("Игрушка")){
+        if (typeChoiceBoxText.equals("Игрушка")) {
             dbHandler.setDB(productToy);
         }
 
-        if(typeChoiceBoxText.equals("Фрукт")){
+        if (typeChoiceBoxText.equals("Фрукт")) {
             dbHandler.setDB(productFruit);
         }
 
-        if(typeChoiceBoxText.equals("Габарритный товар")){
+        if (typeChoiceBoxText.equals("Габарритный товар")) {
             dbHandler.setDB(productOversize);
         }
     }
@@ -247,6 +240,7 @@ public class ControllerCreateWin {
     void createButtonMouseExited(MouseEvent event) {
         CSS.blueButtonExitedChange(createButton);
     }
+
     @FXML
     void exitButtonClicked(MouseEvent event) {
         Stage stage = (Stage) exitButton.getScene().getWindow();
@@ -302,14 +296,17 @@ public class ControllerCreateWin {
     void widthOversizeTextFieldClicked(MouseEvent event) {
         CSS.standTextField(widthOversizeTextField);
     }
+
     @FXML
     void ageToysTextFieldClicked(MouseEvent event) {
         CSS.standTextField(ageToysTextField);
     }
+
     @FXML
     void departmentNameTextFieldClicked(MouseEvent event) {
         CSS.standTextField(departmentNameTextField);
     }
+
     @FXML
     void initialize() {
         countryChoiceBox.setStyle("-fx-font-family: System; -fx-font-size:24");
@@ -324,26 +321,28 @@ public class ControllerCreateWin {
 
         typeChoiceBox.setOnAction(this::anchorControl);
     }
+
     private void anchorControl(ActionEvent event) {
         toyAnchorPane.setVisible(false);
         fruitsAnchorPane.setVisible(false);
         oversizeAnchorPane.setVisible(false);
-        String str=typeChoiceBox.getValue();
-        if(str.equals("Игрушка")){
+        String str = typeChoiceBox.getValue();
+        if (str.equals("Игрушка")) {
             toyAnchorPane.setVisible(true);
         }
-        if(str.equals("Фрукт")){
+        if (str.equals("Фрукт")) {
             fruitsAnchorPane.setVisible(true);
         }
-        if(str.equals("Габарритный товар")){
+        if (str.equals("Габарритный товар")) {
             oversizeAnchorPane.setVisible(true);
         }
     }
-    private void openNewScene(String window){
+
+    private void openNewScene(String window) {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
 
-        FXMLLoader loader=new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
 
         try {
@@ -352,8 +351,8 @@ public class ControllerCreateWin {
             e.printStackTrace();
         }
 
-        Parent root=loader.getRoot();
-        stage=new Stage();
+        Parent root = loader.getRoot();
+        stage = new Stage();
         stage.setScene(new Scene(root));
 
         stage.showAndWait();

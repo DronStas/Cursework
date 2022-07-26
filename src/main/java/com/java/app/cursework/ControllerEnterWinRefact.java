@@ -12,7 +12,6 @@ import com.java.PropertyProduct.ToyProperty;
 import com.java.app.cursework.dop.CSS;
 import com.java.app.cursework.dop.TextChoiceBox;
 import com.java.dataBase.DataBaseHandler;
-import com.java.product.Fruit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
